@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class FollowHandle implements EventHandler {
+public class FollowHandler implements EventHandler {
 
     @Autowired
     MessageService messageService;
