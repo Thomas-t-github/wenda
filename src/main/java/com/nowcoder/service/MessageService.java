@@ -17,6 +17,15 @@ public class MessageService {
     @Autowired
     SensitiveService sensitiveService;
 
+
+    public int updateMessageRead(int id){
+        return messageDAO.updateMessageRead(id);
+    }
+
+    public int getMessageCount(String conversationId){
+        return messageDAO.getMessageCount(conversationId);
+    }
+
     public int addMessage(Message message) {
         message.setContent(HtmlUtils.htmlEscape(message.getContent()));
         message.setContent(sensitiveService.filter(message.getContent()));

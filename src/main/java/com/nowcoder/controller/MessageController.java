@@ -47,6 +47,7 @@ public class MessageController {
                 vo.set("headUrl",user.getHeadUrl());
                 vo.set("userId",user.getId());
                 vos.add(vo);
+                messageService.updateMessageRead(message.getId());
             }
             model.addAttribute("messages",vos);
         } catch (Exception e) {
@@ -73,6 +74,7 @@ public class MessageController {
                 int targetId = hostHolder.getUser().getId() == message.getFromId() ? message.getToId() : message.getFromId();
                 vo.set("user",userService.selectById(targetId));
                 vo.set("unread",messageService.getConvesationUnreadCount(hostHolder.getUser().getId(),message.getConversationId()));
+                vo.set("messageCount",messageService.getMessageCount(message.getConversationId()));
                 vos.add(vo);
             }
             model.addAttribute("conversations",vos);

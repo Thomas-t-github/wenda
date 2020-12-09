@@ -7,13 +7,13 @@
                 <li id="conversation-item-10005_622873">
                     <a class="letter-link" href="/msg/detail?conversationId=$conversation.message.conversationId"></a>
                     <div class="letter-info">
-                        <span class="l-time">$data.format('yyyy-MM-dd HH:mm:ss', $conversation.message.createdDate)</span>
+                        <span class="l-time">$date.format('yyyy-MM-dd HH:mm:ss', $conversation.message.createdDate)</span>
                         <div class="l-operate-bar">
                             <!--<a href="javascript:void(0);" class="sns-action-del" data-id="10005_622873">
                             删除
                             </a>-->
                             <a href="/msg/detail?$conversation.message.conversationId">
-                                共$conversation.message.id条会话
+                                共$conversation.messageCount条会话
                             </a>
                         </div>
                     </div>

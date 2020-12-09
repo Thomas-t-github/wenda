@@ -37,6 +37,8 @@ public class HomeController {
         for (Question question : questions) {
             ViewObject vo = new ViewObject();
             User user = userService.selectById(question.getUserId());
+            String content = question.getContent();
+            question.setContent(content.substring(0, content.length() > 100 ? 100 : content.length()));
             vo.set("question",question);
             vo.set("followCount",followService.getFollowerCount(EntityType.ENTITY_QUESTION,question.getId()));
             vo.set("user",user);
