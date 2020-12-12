@@ -26,12 +26,12 @@ public class LoginHandler implements EventHandler{
     @Override
     public void doHandle(EventModel eventModel) {
 
-//        HashMap<String, Object> hashMap = new HashMap<>();
-//        hashMap.put("username",eventModel.getExt("username"));
-//        hashMap.put("ip",eventModel.getExt("ip"));
-//        String result = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "mails/exception.html", "UTF-8", hashMap);
-//
-//        MailUtil.send(eventModel.getExt("email"), "登录异常", result, true);
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("username",eventModel.getExt("username"));
+        hashMap.put("ip",eventModel.getExt("ip"));
+        String result = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "mails/exception.html", "UTF-8", hashMap);
+
+        MailUtil.send(eventModel.getExt("email"), "登录异常", result, true);
 
     }
 
