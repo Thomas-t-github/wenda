@@ -2,9 +2,9 @@
 port = 465
 
 # 发件人（必须正确，否则发送失败）
-from = 2360564158@qq.com
+from = ********
 # 密码（注意，某些邮箱需要为SMTP服务单独设置密码，详情查看相关帮助）即授权码
-pass = tvfhyuouoojsdiaf
+pass = ********
 
 #使用 STARTTLS安全连接，STARTTLS是对纯文本通信协议的扩展。
 starttlsEnable = true
